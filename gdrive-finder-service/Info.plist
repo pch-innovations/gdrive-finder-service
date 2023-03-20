@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.pch.gdrive-finder-service.gdrive</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>gdrive</string>
+			</array>
+		</dict>
+	</array>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>Copy gdrive link</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>handleFileService</string>
+			<key>NSRequiredContext</key>
+			<dict>
+				<key>NSWorkspace</key>
+				<array>
+					<string>com.apple.finder</string>
+				</array>
+			</dict>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+				<string>public.plain-text</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

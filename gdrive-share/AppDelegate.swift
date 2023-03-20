@@ -4,6 +4,10 @@ import os
 class AppDelegate: NSObject, NSApplicationDelegate {
     var openedWithURL = false
     
+    func application(_ application: NSApplication) {
+        errorAlert(text: "Opened without link")
+    }
+    
     // Entry point when the application gets called by clicking on a gdrive:// url
     func application(_ application: NSApplication, open urls: [URL]) {
         openedWithURL = true
@@ -15,6 +19,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // Entry point when the application gets called by the context menu item under services
     @objc func handleFileService(_ pboard: NSPasteboard, userData: String?, error: AutoreleasingUnsafeMutablePointer<NSDictionary?>) {
+        openedWithURL = true
+        
         guard let types = pboard.types, types.contains(.fileURL) else { return }
 
         if let urls = pboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL] {
@@ -26,18 +32,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     pasteboard.clearContents()
                     pasteboard.setString(customUrlScheme, forType: .string)
                 } else {
-                    errorAlert(text: "Not a gdrive folder")
+                    errorAlert(text: "Not a gdrive folder: " + url.absoluteString)
                 }
             }
         }
+        
+        NSApp.terminate(nil)
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        print("App launched")
+        os_log("App launched")
     
         if !openedWithURL && !isInDebugMode() {
-            print("Terminating because not launched by URL or Xcode")
-            NSApp.terminate(nil)
+            os_log("Terminating because not launched by URL or Xcode")
+//            NSApp.terminate(nil)
         }
     }
 
@@ -61,6 +69,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func handleGDriveURL(_ url: URL) {
+        os_log("Handling URL")
         // Convert the "gdrive://" URL back to the local file path
         if let localFilePath = gdriveURLToLocalFilePath(url) {
             print("Local file path:", localFilePath)
@@ -69,6 +78,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSWorkspace.shared.selectFile(fileURL.path, inFileViewerRootedAtPath: "")
             NSApp.terminate(nil)
         } else {
+            errorAlert(text: "Could not convert '" + url.absoluteString + "' to local gdrive path")
             print("Failed to convert GDrive URL to local file path")
         }
     }

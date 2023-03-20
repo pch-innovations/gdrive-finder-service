@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1420"
-   version = "1.3">
+   wasCreatedForAppExtension = "YES"
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,10 +15,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D48D189B29C1102F0098BD70"
+               BuildableName = "Copy gdrive link.appex"
+               BlueprintName = "extension"
+               ReferencedContainer = "container:gdrive-share.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "D48D188529C1100D0098BD70"
-               BuildableName = "gdrive-finder-service.app"
-               BlueprintName = "gdrive-finder-service"
-               ReferencedContainer = "container:gdrive-finder-service.xcodeproj">
+               BuildableName = "gdrive-share.app"
+               BlueprintName = "gdrive-share"
+               ReferencedContainer = "container:gdrive-share.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,39 +47,46 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
+      askForAppToLaunch = "Yes"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      allowLocationSimulation = "YES"
+      launchAutomaticallySubstyle = "2">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.finder"
+         RemotePath = "/Finder">
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D48D188529C1100D0098BD70"
-            BuildableName = "gdrive-finder-service.app"
-            BlueprintName = "gdrive-finder-service"
-            ReferencedContainer = "container:gdrive-finder-service.xcodeproj">
+            BuildableName = "gdrive-share.app"
+            BlueprintName = "gdrive-share"
+            ReferencedContainer = "container:gdrive-share.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
+      debugDocumentVersioning = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D48D188529C1100D0098BD70"
-            BuildableName = "gdrive-finder-service.app"
-            BlueprintName = "gdrive-finder-service"
-            ReferencedContainer = "container:gdrive-finder-service.xcodeproj">
+            BuildableName = "gdrive-share.app"
+            BlueprintName = "gdrive-share"
+            ReferencedContainer = "container:gdrive-share.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

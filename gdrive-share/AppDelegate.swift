@@ -132,7 +132,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         let googleDriveFolderName = String(urlString[matchedRange])
-        let domain = googleDriveFolderName.components(separatedBy: "@").last?.removingPercentEncoding
+        let domain = googleDriveFolderName.removingPercentEncoding?.components(separatedBy: "@").last
         
         guard let unwrappedDomain = domain else {
             print("No domain found")

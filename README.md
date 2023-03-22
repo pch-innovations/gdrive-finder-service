@@ -40,6 +40,7 @@ This basically allows you to share local GDrive links with your coworkers who ha
 ## Building it from source
 
 1. Build in Xcode
+2. Archive .app and put in `/Applications` folder
 
 ### Development
 

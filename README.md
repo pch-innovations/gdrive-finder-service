@@ -1,5 +1,5 @@
 # gdrive-finder-service
-MacOS service to extend the context menu in Finder to add convenience functions to google drive managed folders
+MacOS service to extend the context menu in Finder in order to add convenience functions to Google Drive managed folders
 
 ## What does this do
 

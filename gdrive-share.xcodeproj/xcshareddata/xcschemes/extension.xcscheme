@@ -30,7 +30,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D48D188529C1100D0098BD70"
-               BuildableName = "gdrive-share.app"
+               BuildableName = "gdrive-finder-service.app"
                BlueprintName = "gdrive-share"
                ReferencedContainer = "container:gdrive-share.xcodeproj">
             </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D48D188529C1100D0098BD70"
-            BuildableName = "gdrive-share.app"
+            BuildableName = "gdrive-finder-service.app"
             BlueprintName = "gdrive-share"
             ReferencedContainer = "container:gdrive-share.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D48D188529C1100D0098BD70"
-            BuildableName = "gdrive-share.app"
+            BuildableName = "gdrive-finder-service.app"
             BlueprintName = "gdrive-share"
             ReferencedContainer = "container:gdrive-share.xcodeproj">
          </BuildableReference>

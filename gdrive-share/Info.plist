@@ -21,7 +21,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Copy gdrive link</string>
+				<string>Copy GDrive link</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>handleFileService</string>

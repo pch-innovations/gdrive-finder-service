@@ -4,17 +4,15 @@ import os
 class AppDelegate: NSObject, NSApplicationDelegate {
     var openedWithURL = false
     
-    func application(_ application: NSApplication) {
-        errorAlert(text: "Opened without link")
-    }
-    
     // Entry point when the application gets called by clicking on a gdrive:// url
     func application(_ application: NSApplication, open urls: [URL]) {
         openedWithURL = true
-        
+
         for url in urls {
             handleGDriveURL(url)
         }
+        
+        NSApp.terminate(nil)
     }
     
     // Entry point when the application gets called by the context menu item under services
@@ -32,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     pasteboard.clearContents()
                     pasteboard.setString(customUrlScheme, forType: .string)
                 } else {
-                    errorAlert(text: "Not a gdrive folder: " + url.absoluteString)
+                    errorAlert(text: "Not a GDrive folder: " + url.absoluteString)
                 }
             }
         }
@@ -42,10 +40,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         os_log("App launched")
-    
-        if !openedWithURL && !isInDebugMode() {
-            os_log("Terminating because not launched by URL or Xcode")
-//            NSApp.terminate(nil)
+        
+        if !isInDebugMode() {
+            let timeoutDuration: TimeInterval = 5
+            Timer.scheduledTimer(withTimeInterval: timeoutDuration, repeats: false) { _ in
+                os_log("Auto-Terminating gdrive-finder-service")
+                NSApp.terminate(self)
+            }
         }
     }
 
@@ -75,10 +76,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             print("Local file path:", localFilePath)
             let fileURL = localFilePath
             // Open the file in Finder
-            NSWorkspace.shared.selectFile(fileURL.path, inFileViewerRootedAtPath: "")
-            NSApp.terminate(nil)
+            if FileManager.default.fileExists(atPath: fileURL.path) {
+                NSWorkspace.shared.selectFile(fileURL.path, inFileViewerRootedAtPath: "")
+            } else {
+                errorAlert(text: "Could not find '" + fileURL.absoluteString + "' on your device")
+            }
         } else {
-            errorAlert(text: "Could not convert '" + url.absoluteString + "' to local gdrive path")
+            errorAlert(text: "Could not convert '" + url.absoluteString + "' to local GDrive path")
             print("Failed to convert GDrive URL to local file path")
         }
     }
@@ -93,9 +97,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func errorAlert(text: String) {
         let alert = NSAlert()
-        alert.messageText = "Error occured!"
+        alert.messageText = "Oops!"
         alert.informativeText = text
-        alert.alertStyle = .critical
+        alert.alertStyle = .warning
         alert.addButton(withTitle: "OK")
         alert.runModal()
     }

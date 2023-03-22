@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Get the directory containing the script
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Change the working directory to the script's directory
+cd "$script_dir" || exit
+
+rm -rf output 
+mkdir output
+pkgbuild --component gdrive-finder-service/gdrive-finder-service.app --install-location /Applications --scripts scripts/ output/gdrive-finder-service.pkg

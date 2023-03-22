@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Launch the app
+open /Applications/gdrive-finder-service.app
+
+# Show postinstall dialog
+/usr/bin/osascript -e 'display dialog "To copy a shareable Google Drive link, right click on any file or folder in a shared Google Drive folder and go to (Services >) Copy GDrive link." with title "Installation Complete" buttons {"OK"} default button "OK"'

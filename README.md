@@ -63,7 +63,7 @@ This basically allows you to share local GDrive links with your coworkers who ha
 
 ## Further info
 
-- Everything interesting happens in `gdrive-share/AppDelegate.swift``
+- Everything interesting happens in `gdrive-share/AppDelegate.swift`
 - `func application(...)` is the entry point for clicking on a `gdrive://` link
 - `func handleFileService(...)` is the entry point for clicking on the `Copy GDrive link` context menu item
     - Configured in `gdrive-share/Info.plist`

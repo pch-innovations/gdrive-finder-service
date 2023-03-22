@@ -45,7 +45,10 @@ This basically allows you to share local GDrive links with your coworkers who ha
 ### Development
 
 - To test just run the project from Xcode and watch the console while opening or generating links
-- If you want to refresh the Finder services context menu call `/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user`
+- If you want to refresh the Finder services context menu run
+ ```sh
+ /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+ ```
 
 
 ## Creating installer

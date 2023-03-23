@@ -12,7 +12,6 @@ Check out [our website](https://pch-innovations.com) for our latest projects or 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pch-innovations/gdrive-finder-service)
 ![GitHub issues](https://img.shields.io/github/issues/pch-innovations/gdrive-finder-service)
 [![GitHub followers](https://img.shields.io/github/followers/pch-innovations?label=Follow%20PCH%20Innovations&style=social)](https://github.com/pch-innovations)
-![MacOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/pch-innovations-gmbh)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/pch.innovations/)
 

@@ -1,4 +1,19 @@
 # gdrive-finder-service
+
+
+![Logo](gdrive-share/Assets.xcassets/AppIcon.appiconset/google-eyes.png)
+
+<img src="gdrive-share/Assets.xcassets/AppIcon.appiconset/google-eyes.png" alt= “” width="256" height="256">
+
+MacOS service to extend the context menu in Finder to add convenience functions to google drive managed folders
+
+
+
+![GitHub](https://img.shields.io/github/license/pch-innovations/gdrive-finder-service)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/pch-innovations/gdrive-finder-service)
+![GitHub issues](https://img.shields.io/github/issues/pch-innovations/gdrive-finder-service)
+[![GitHub followers](https://img.shields.io/github/followers/pch-innovations?label=Follow%20PCH%20Innovations&style=social)](https://github.com/pch-innovations)
+
 MacOS service to extend the context menu in Finder in order to add convenience functions to Google Drive managed folders
 
 ## What does this do

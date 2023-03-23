@@ -2,14 +2,14 @@
 
 <p align="center"><img src="gdrive-share/Assets.xcassets/AppIcon.appiconset/google-eyes.png" alt="GDrive Finder Service Logo" width="256" height="256"></p>
 
-GDrive Finder Service is a Finder extension for MacOS that allows you to share Google Drive links for shared files that open locally in your Finder.
+GDrive Finder Service is a Finder extension for MacOS that allows you to share Google Drive links inside of your Google Workspace that open locally in your Finder.
 
-This is super useful when your company uses Google Drive for internal file hosting. Instead of sharing browser links to files or folders you can generate links that you can share on Slack, Teams etc. which, when clicked on, will navigate to the file locally in the users Finder.
+This is super useful when your company uses Google Drive for internal file hosting. Instead of sharing browser links to files or folders you can generate links that you can share on Slack, Teams etc. which, when clicked on, will navigate to the file locally in the user's Finder.
 
-Check out [our website](https://pch-innovations.com) for our latest projects or contact us at [moonshots@pch-innovations.com](mailto:moonshots@pch-innovations.com) for any inquires.
+![Usage demonstration](usage.gif)
 
 ![GitHub](https://img.shields.io/github/license/pch-innovations/gdrive-finder-service)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/pch-innovations/gdrive-finder-service)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/pch-innovations/gdrive-finder-service)](https://github.com/pch-innovations/gdrive-finder-service/releases)
 ![GitHub issues](https://img.shields.io/github/issues/pch-innovations/gdrive-finder-service)
 [![GitHub followers](https://img.shields.io/github/followers/pch-innovations?label=Follow%20PCH%20Innovations&style=social)](https://github.com/pch-innovations)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/pch-innovations-gmbh)
@@ -17,7 +17,7 @@ Check out [our website](https://pch-innovations.com) for our latest projects or 
 
 # Getting started
 ## Prerequisites
-- Using MacOS Google Drive desktop client for shared file hosting inside of a company.
+- Using MacOS Google Drive desktop client
 
 ## Installation
 

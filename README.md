@@ -87,3 +87,8 @@ This basically allows you to share local GDrive links with your coworkers who ha
     - Configured in `gdrive-share/Info.plist`
 - `func applicationDidFinishLaunching(...)` sets up an auto-terminate after 5 seconds to close the app automatically when it has been opened by the postinstall script
     - The postinstall script opens the app once to register the service items with MacOS
+    
+## Known issues / TODOS
+
+- [ ] google drive mount point sometimes different on a single user installation (/Volumes/GoogleDrive vs /Volumes/CloudStorage-gdrivesuer)
+- [ ] "Shared Drives" is translated in different languages so `/Volumes/CloudStorage-user/Shared Drives/destination_folder` will not work if the receiver of the link has its OS or google drive language set to a different language than english

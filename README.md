@@ -91,4 +91,3 @@ This basically allows you to share local GDrive links with your coworkers who ha
 ## Known issues / TODOS
 
 - [ ] google drive mount point sometimes different on a single user installation (/Volumes/GoogleDrive vs /Volumes/CloudStorage-gdrivesuer)
-- [ ] "Shared Drives" is translated in different languages so `/Volumes/CloudStorage-user/Shared Drives/destination_folder` will not work if the receiver of the link has its OS or google drive language set to a different language than english

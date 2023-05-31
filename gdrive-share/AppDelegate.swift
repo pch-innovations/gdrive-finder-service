@@ -154,12 +154,42 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .map { String($0) }
             .filter { !$0.isEmpty }
         
-        let localFilePath = pathComponents.reduce(googleDriveFolder) { url, component in
-            url.appendingPathComponent(component.removingPercentEncoding ?? component)
+        // The following method does the following:
+        // The top level directory "Shared Drives" can be translated into different languages, depending on the users language settings
+        // So in order to circumvent having to know the specific translation of that directory
+        // We iterate throught the top level directories after the google drive account folder and just try our path
+        // with every folder in it and see if the file / folder is accesible
+        // We drop the first part of our path component which is the language sensitive "Shared Drives"
+        guard let sharedDrivesFolder = findSharedDrivesFolder(in: googleDriveFolder, withPathComponents: Array(pathComponents.dropFirst())) else {
+            print("No matching Shared Drives folder found")
+            return nil
         }
+        
+        let localFilePath = sharedDrivesFolder
         
         print("Local file path:", localFilePath)
         
         return localFilePath
+    }
+    
+    func findSharedDrivesFolder(in googleDriveFolder: URL, withPathComponents pathComponents: [String]) -> URL? {
+        let fileManager = FileManager.default
+        do {
+            let topLevelDirectories = try fileManager.contentsOfDirectory(at: googleDriveFolder, includingPropertiesForKeys: nil)
+
+            for topLevelDirectory in topLevelDirectories {
+                let potentialPath = pathComponents.reduce(topLevelDirectory) { url, component in
+                    url.appendingPathComponent(component.removingPercentEncoding ?? component)
+                }
+                
+                if fileManager.fileExists(atPath: potentialPath.path) {
+                    return potentialPath
+                }
+            }
+        } catch {
+            print("Failed to enumerate directory:", error)
+        }
+        
+        return nil
     }
 }
